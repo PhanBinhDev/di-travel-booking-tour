@@ -1,0 +1,301 @@
+/* Tour Detail Section */
+
+.tour-title {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.tour-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.tour-info {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.info-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: #2196f3;
+}
+
+.tour-description {
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.tour-schedule {
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.schedule-day {
+  margin-bottom: 20px;
+}
+
+.schedule-title {
+  font-size: 18px;
+  color: #2196f3;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.slide-show {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.slide-show i {
+  position: absolute;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #fd4c5c;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.slide-show .back {
+  left: 0;
+}
+.slide-show .next {
+  right: 0;
+}
+
+/* form */
+.form-booktour {
+  width: 100%;
+  border: 1px solid #fd4c5c;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+}
+.form-booktour div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.form-booktour h1 {
+  text-align: center;
+  color: #fd4c5c;
+  margin-bottom: 10px;
+}
+.form-booktour label {
+  font-size: 18px;
+  margin: 0 0 2px 10px;
+}
+.form-booktour input,
+.form-booktour select {
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 15px;
+  background-color: rgb(239, 231, 242);
+  border-radius: 5px;
+  margin-bottom: 3px;
+}
+.form-booktour button {
+  margin-top: 20px;
+  padding: 10px 0;
+  border: none;
+  outline: none;
+  background-color: #fd4c5c;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 5px;
+  color: white;
+}
+.form-booktour button:hover {
+  cursor: pointer;
+  background-color: #61ce70;
+}
+
+/* form-client-booking */
+.table-booking {
+  display: flex;
+  flex-direction: column;
+}
+/* form-payment */
+.user-info {
+  margin-left: 20px;
+}
+.user-info input {
+  width: 100%;
+}
+.user-info {
+  border: none;
+  width: 50%;
+}
+.booktour hr {
+  margin: 30px 50px;
+}
+.form-payment {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+.form-payment h2 {
+  text-align: center;
+  color: #fd4c5c;
+  margin-bottom: 20px;
+  margin-right: auto;
+}
+.payment-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.payment-option:hover {
+  background-color: #f5f5f5;
+}
+.payment-option input {
+  margin-right: 15px;
+}
+.payment-button {
+  background-color: #fd4c5c;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 15px 0 30px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.payment-button:hover {
+  background-color: #61ce70;
+}
+/* booked-tour */
+.booked-tour {
+  box-shadow: 0 0 2px rgb(197, 197, 197);
+  padding: 5px 20px;
+  margin-top: 20px;
+}
+.booked-tour img {
+  width: 400px;
+  height: 200px;
+  object-fit: cover;
+}
+.booked-tour p {
+  font-size: 17px;
+  margin: 10px;
+}
+.user-info hr {
+  margin: 0 !important;
+}
+.user-info .total {
+  font-size: 20px;
+  margin-left: 350px;
+}
+/* comment */
+.comment-container {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+.comment-container h1 {
+  margin-bottom: 10px;
+}
+.comment-input-section {
+  display: flex;
+  margin-bottom: 20px;
+}
+.comment-textarea {
+  flex-grow: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: none;
+  height: 100px;
+  outline: none;
+  font-size: 16px;
+}
+.send-button {
+  padding: 10px 20px;
+  background-color: #fd4c5c;
+  font-size: 17px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.send-button:hover {
+  background-color: #61ce70;
+}
+.comments-section {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+.single-comment {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+.comment-author {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.comment-date {
+  color: #888;
+  font-size: 0.8em;
+  margin: 3px 0 5px 0;
+}
+/* tourDetail-news */
+.tourDetail-news {
+  width: 340px;
+  margin-top: 50px;
+}
+.tourDetail-news img {
+  width: 100%;
+  height: auto;
+}
+.tourDetail-news h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.tourDetail-news .care-right-news {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.tourDetail-news .care-right-news img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.tourDetail-news .right-news-content {
+  flex-grow: 1;
+}
+
+.tourDetail-news .right-news-content h4 {
+  font-size: 15px;
+  margin: 0;
+}

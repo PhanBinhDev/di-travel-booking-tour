@@ -1,0 +1,158 @@
+.news-main {
+  margin-top: 100px;
+  padding: 0 5rem;
+}
+
+/* Hot News Section */
+.news-hot {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.hottest {
+  width: 66%;
+}
+.hottest .content a {
+  text-decoration: none;
+  font-size: 30px;
+  color: black;
+}
+.hottest .content h3 {
+  margin: 10px 0;
+}
+.second-news {
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.second-news a {
+  text-decoration: none;
+  color: black;
+}
+.second-news .category p {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.hottest img,
+.second img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.hottest img {
+  height: 500px;
+}
+
+.second img {
+  height: 200px;
+}
+
+.hottest h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.list-inline ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  font-size: 1rem;
+  color: #888;
+}
+
+/* Banner */
+.news-banner {
+  margin: 50px 0;
+}
+.news-banner img {
+  width: 100%;
+}
+
+/* Care Section */
+.care {
+  display: flex;
+  gap: 30px;
+}
+
+.care h2 {
+  margin-bottom: 20px;
+  font-size: 35px;
+}
+
+.care-left {
+  width: 70%;
+}
+
+.care-right {
+  width: 30%;
+}
+.care-right h3 {
+  font-size: 25px;
+  color: rgb(25, 25, 25);
+}
+.care .second-content {
+  width: 620px;
+}
+.care .second-content a {
+  text-decoration: none;
+  color: black;
+}
+.care .second-content h3 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.care .second-content p {
+  margin-bottom: 10px;
+  font-size: large;
+  color: rgb(32, 32, 32);
+}
+.care-right img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.care-right hr {
+  margin: 5px 0 25px 0;
+}
+
+.care-news {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.care-news img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.care-right-news {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.care-right-news img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+.care-right-news p {
+  margin: 10px 0;
+}
+.care-right hr {
+  margin: 15px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+.care-right a {
+  text-decoration: none;
+  color: black;
+  font-size: larger;
+}
