@@ -21,17 +21,12 @@ Trước khi tạo nhánh mới cho tính năng hoặc bắt đầu sửa lỗi,
 - Fetch và cập nhật thông tin từ remote:
 
 ```bash
-git fetch
-Pull các thay đổi mới nhất từ nhánh dev:
-git checkout dev
-git pull origin dev
+git pull origin main
 
 2. Tạo Nhánh Mới Cho Tính Năng Mới (Feature Branch)
 Sau khi pull xong, bạn có thể tạo một nhánh mới để phát triển tính năng. Đặt tên cho nhánh theo chức năng bạn đang phát triển.
 
 Cách thực hiện:
-Chuyển sang nhánh dev (nếu chưa ở trên đó):
-git checkout dev
 Tạo một nhánh mới cho tính năng:
 git checkout -b feature/ten-tinh-nang
 
