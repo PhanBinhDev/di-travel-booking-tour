@@ -36,7 +36,8 @@ CREATE TABLE `bookings` (
   `address` varchar(255) NOT NULL,
   `start_location` enum('Hà Nội','Hồ Chí Minh') NOT NULL DEFAULT 'Hà Nội',
   `booking_date` date NOT NULL,
-  `status` varchar(255) NOT NULL
+  `status` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -65,7 +66,7 @@ CREATE TABLE `news` (
   `content3` text DEFAULT NULL,
   `author_id` int(11) NOT NULL,
   `status` varchar(255) NOT NULL,
-  `create_at` datetime NOT NULL
+  `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -89,6 +90,7 @@ CREATE TABLE `payments` (
   `amount` int(11) NOT NULL,
   `payment_method` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL
+  `created_at` DATE NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -102,7 +104,7 @@ CREATE TABLE `reviews` (
   `tour_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `comment` varchar(255) DEFAULT NULL,
-  `create_at` date NOT NULL
+  `created_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -136,7 +138,8 @@ CREATE TABLE `tour` (
   `image1` varchar(255) NOT NULL,
   `image2` varchar(255) NOT NULL,
   `image3` varchar(255) NOT NULL,
-  `image4` varchar(255) NOT NULL
+  `image4` varchar(255) NOT NULL,
+  `created_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -168,7 +171,8 @@ CREATE TABLE `user` (
   `email` varchar(255) NOT NULL,
   `fullname` varchar(255) NOT NULL,
   `sdt` int(11) NOT NULL,
-  `role` enum('admin','client') NOT NULL
+  `role` enum('admin','client') NOT NULL,
+  `created_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -299,27 +303,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
--- Thêm created_at vào bảng bookings
-ALTER TABLE `bookings` 
-ADD COLUMN `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP;
-
--- Đổi tên create_at thành created_at trong bảng news
-ALTER TABLE `news` 
-CHANGE COLUMN `create_at` `created_at` DATETIME NOT NULL;
-
--- Thêm created_at vào bảng payments
-ALTER TABLE `payments` 
-ADD COLUMN `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP;
-
--- Đổi tên create_at thành created_at trong bảng reviews
-ALTER TABLE `reviews` 
-CHANGE COLUMN `create_at` `created_at` DATE NOT NULL;
-
--- Thêm created_at vào bảng tour
-ALTER TABLE `tour` 
-ADD COLUMN `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP;
-
--- Thêm created_at vào bảng user
-ALTER TABLE `user` 
-ADD COLUMN `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP;
