@@ -158,7 +158,8 @@ CREATE TABLE `tour` (
   `image1` varchar(255) NOT NULL,
   `image2` varchar(255) NOT NULL,
   `image3` varchar(255) NOT NULL,
-  `image4` varchar(255) NOT NULL
+  `image4` varchar(255) NOT NULL,
+  `created_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
