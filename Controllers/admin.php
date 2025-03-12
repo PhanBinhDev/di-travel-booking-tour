@@ -30,7 +30,7 @@ class adminControllers{
         $allNews = $this->home->getAll($sql1);
         $allBookings = $this->home->getAll($sql2);
         $allReviews = $this->home->getAll($sql3);
-        // $allContact = $this->home->getAll($sql4);
+        $allContact = $this->home->getAll($sql4);
 
 
         require_once "./Views/main/admin.php";

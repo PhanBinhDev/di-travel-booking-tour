@@ -13,7 +13,7 @@ require_once "./Views/layout/header.php";
                     'news' => $allNews,        
                     'bookings' => $allBookings,
                     'reviews' => $allReviews,
-                    // 'contact' => $allContact 
+                    'contact' => $allContact 
 
                 ];
                 $filteredContent = [];
