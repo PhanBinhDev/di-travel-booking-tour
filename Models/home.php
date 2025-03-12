@@ -26,16 +26,16 @@ class Home{
         return $stmt->fetch();
     }
 
-    public function insertComment($tour_id, $user_id, $comment, $create_at){
-        $sql = "INSERT INTO reviews (tour_id, user_id, comment, create_at)
-                VALUES('$tour_id', '$user_id', '$comment', '$create_at')";
+    public function insertComment($tour_id, $user_id, $comment, $created_at){
+        $sql = "INSERT INTO reviews (tour_id, user_id, comment, created_at)
+                VALUES('$tour_id', '$user_id', '$comment', '$created_at')";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
     }
 
-    public function insertContact($name, $email, $phone, $message, $create_at){
-        $sql = "INSERT INTO contact (name,email,phone,message, create_at)
-                VALUES('$name', '$email', '$phone', '$message', '$create_at')";
+    public function insertContact($name, $email, $phone, $message, $created_at){
+        $sql = "INSERT INTO contact (name,email,phone,message, created_at)
+                VALUES('$name', '$email', '$phone', '$message', '$created_at')";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
     }
@@ -44,7 +44,7 @@ class Home{
         $sql = "SELECT reviews.*, user.username
                 FROM reviews 
                 JOIN user ON reviews.user_id = user.id 
-                WHERE reviews.tour_id = ? ORDER BY create_at DESC";
+                WHERE reviews.tour_id = ? ORDER BY created_at DESC";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([$tour_id]);
         $result = $stmt->fetchAll();
@@ -64,11 +64,11 @@ class Home{
     }
 
     public function getAllTours($region = null) {
-        $sql = "SELECT * FROM tour ORDER BY create_at DESC";
+        $sql = "SELECT * FROM tour ORDER BY created_at DESC";
         $sql1 = "SELECT * FROM tour";
         
         if (!empty($region)) {
-            $sql1 .= " WHERE region = ? ORDER BY create_at DESC";
+            $sql1 .= " WHERE region = ? ORDER BY created_at DESC";
             $stmt = $this->conn->prepare($sql1);
             $stmt->execute([$region]);
         } else {
@@ -135,15 +135,15 @@ class Home{
 
     public function insertTour($tour_name,$location,$vehicle,$region,$start_location,
                                 $description,$price,$duration,$image,
-                                $start_date,$end_date,$create_at,$tour_status,
+                                $start_date,$end_date,$created_at,$tour_status,
                                 $image1,$image2,$image3,$image4){
         $sql = "INSERT INTO tour( tour_name, location, vehicle, region, start_location,
                                     description,price, duration, image,
-                                    start_date,end_date,create_at, tour_status,
+                                    start_date,end_date,created_at, tour_status,
                                     image1, image2, image3, image4)
                 VALUES('$tour_name','$location','$vehicle','$region','$start_location',
                         '$description','$price','$duration','$image',
-                        '$start_date','$end_date','$create_at','$tour_status',
+                        '$start_date','$end_date','$created_at','$tour_status',
                        ' $image1','$image2','$image3','$image4')";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
@@ -151,19 +151,19 @@ class Home{
 
     public function insertNews($title, $main_img, $description, $image1,
                                 $content, $image2, $content2, $image3,
-                                $content3, $author_id, $status, $create_at){
+                                $content3, $author_id, $status, $created_at){
         $sql = "INSERT INTO news(title, main_img, description, image1, content, image2, content2,
-                                image3, content3, author_id, status, create_at)
+                                image3, content3, author_id, status, created_at)
                 VALUES('$title', '$main_img', '$description', '$image1',
                         '$content', '$image2', '$content2', '$image3',
-                        '$content3', '$author_id', '$status', '$create_at')";
+                        '$content3', '$author_id', '$status', '$created_at')";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
     }
 
     public function editTour($id,$tour_name,$location,$vehicle,$region,$start_location,
                             $description,$price,$duration,$image,
-                            $start_date,$end_date,$create_at,$tour_status,
+                            $start_date,$end_date,$created_at,$tour_status,
                             $image1,$image2,$image3,$image4){
 
         $sql = "UPDATE tour SET tour_name = '$tour_name',
@@ -177,7 +177,7 @@ class Home{
                                     image = '$image',
                                     start_date = '$start_date',
                                     end_date = '$end_date',
-                                    create_at = '$create_at',
+                                    created_at = '$created_at',
                                     tour_status = '$tour_status',
                                     image1 = '$image1', image2 = '$image2', image3 = '$image3', image4 = '$image4'
                                     WHERE id = $id";
@@ -187,7 +187,7 @@ class Home{
 
     public function editNews($news_id,$title, $main_img, $description, $image1,
                             $content, $image2, $content2, $image3,
-                            $content3, $author_id, $status, $create_at){
+                            $content3, $author_id, $status, $created_at){
 
         $sql = "UPDATE news SET title = '$title',
                                     main_img = '$main_img',
@@ -201,7 +201,7 @@ class Home{
                                     content3 = '$content3',
                                     author_id = '$author_id',
                                     status = '$status',
-                                    create_at = '$create_at'
+                                    created_at = '$created_at'
                                     WHERE news_id = $news_id";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();

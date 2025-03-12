@@ -7,7 +7,7 @@ require_once "./Views/layout/header.php";
 
     <div class="main-content">
       <h1 class="news-title"><?= $detail["title"]?></h1>
-      <div class="news-date"><?= $detail["create_at"]?></div>
+      <div class="news-date"><?= $detail["created_at"]?></div>
       <p><?= $detail["description"]?></p>
 
       <div class="news-content">

@@ -13,7 +13,7 @@ require_once "./Views/layout/header.php";
                     'news' => $allNews,        
                     'bookings' => $allBookings,
                     'reviews' => $allReviews,
-                    'contact' => $allContact 
+                    // 'contact' => $allContact 
 
                 ];
                 $filteredContent = [];
@@ -36,7 +36,8 @@ require_once "./Views/layout/header.php";
               class="fa-solid fa-comment"></i> Quản lý Bình luận</a></li>
         <li><a href="index.php?route=admin&type=contact" <?php if($type == 'contact') echo 'class="active"'?>><i
               class="fa-solid fa-address-book"></i> Quản lý Liên hệ khách hàng</a></li>
-
+        <li><a href="index.php?route=admin&type=gallery" <?php if($type == 'gallery') echo 'class="active"'?>><i
+              class="fa-solid fa-image"></i> Quản lý hình ảnh</a></li>
       </ul>
     </div>
 
@@ -179,7 +180,7 @@ require_once "./Views/layout/header.php";
           <td><?= $stt++?></td>
           <td><?= $value["title"]?></td>
           <td><?= $value["fullname"]?></td>
-          <td><?= $value["create_at"]?></td>
+          <td><?= $value["created_at"]?></td>
           <td class="action-buttons">
             <button class="btn-edit">
               <a style="text-decoration: none;color:white;"
@@ -224,7 +225,7 @@ require_once "./Views/layout/header.php";
           <td><?= $value["fullname"]?></td>
           <td><?= $value["tour_name"]?></td>
           <td><?= $value["comment"]?></td>
-          <td><?= $value["review_create_at"]?></td>
+          <td><?= $value["review_created_at"]?></td>
 
           <td class="action-buttons">
             <button class="btn-edit">
@@ -248,7 +249,7 @@ require_once "./Views/layout/header.php";
           <td><?= $value["email"]?></td>
           <td><?= $value["phone"]?></td>
           <td><?= $value["message"]?></td>
-          <td><?= $value["create_at"]?></td>
+          <td><?= $value["created_at"]?></td>
           <td class="action-buttons">
             <button class="btn-delete">
               <a onclick="return confirm('Bạn có chắc chắn muốn xoá không??');"

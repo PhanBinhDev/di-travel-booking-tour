@@ -11,6 +11,7 @@ require_once "./Views/layout/header.php";
         <li><a href="index.php?route=admin&type=news"><i class="fas fa-newspaper"></i> Quản lý Tin tức</a></li>
         <li><a href="index.php?route=admin&type=bookings"><i class="fas fa-ticket-alt"></i> Quản lý Đặt tour</a></li>
         <li><a href="index.php?route=admin&type=reviews"><i class="fa-solid fa-comment"></i> Quản lý bình luận</a></li>
+        <li><a href="index.php?route=admin&type=gallery"><i class="fa-solid fa-image"></i> Quản lý hình ảnh</a></li>
       </ul>
     </div>
     <div class="main-content new-tour">

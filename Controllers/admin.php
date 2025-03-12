@@ -10,26 +10,27 @@ class adminControllers{
             header("Location: ?route=login");
             exit();
         }
-        $sql = "SELECT * FROM tour ORDER BY create_at DESC";
-        $sql1 = "SELECT * FROM news JOIN user ON news.author_id = user.id ORDER BY create_at DESC";
+        $sql = "SELECT * FROM tour ORDER BY created_at DESC";
+        $sql1 = "SELECT * FROM news JOIN user ON news.author_id = user.id ORDER BY news.created_at DESC";
+
         $sql2 = "SELECT * FROM bookings 
-                JOIN user ON bookings.user_id = user.id
-                JOIN tour ON bookings.tour_id = tour.id
-                ORDER BY create_at DESC";
+        JOIN user ON bookings.user_id = user.id
+        JOIN tour ON bookings.tour_id = tour.id
+        ORDER BY bookings.created_at DESC";
         
-        $sql3 = "SELECT reviews.*, user.fullname,tour.id, tour.tour_name, reviews.create_at as review_create_at FROM reviews 
+        $sql3 = "SELECT reviews.*, user.fullname,tour.id, tour.tour_name, reviews.created_at as review_created_at FROM reviews 
                 JOIN user ON reviews.user_id = user.id
                 JOIN tour ON reviews.tour_id = tour.id
-                ORDER BY review_create_at DESC";
+                ORDER BY review_created_at DESC";
 
-        $sql4 = "SELECT * FROM contact ORDER BY create_at DESC";
+        $sql4 = "SELECT * FROM contact ORDER BY created_at DESC";
 
 
         $allTours = $this->home->getAll($sql);
         $allNews = $this->home->getAll($sql1);
         $allBookings = $this->home->getAll($sql2);
         $allReviews = $this->home->getAll($sql3);
-        $allContact = $this->home->getAll($sql4);
+        // $allContact = $this->home->getAll($sql4);
 
 
         require_once "./Views/main/admin.php";
@@ -104,7 +105,7 @@ class adminControllers{
             $duration = $_POST['duration'];
             $start_date = $_POST['start_date'];
             $end_date = $_POST['end_date'];
-            $create_at = date('Y-m-d');
+            $created_at = date('Y-m-d');
             $tour_status = $_POST['tour_status'];
         
         
@@ -122,7 +123,7 @@ class adminControllers{
             $image4 = $_FILES["image4"]["name"];
             $result = $this->home->insertTour($tour_name,$location,$vehicle,$region,$start_location,
             $description,$price,$duration,$image,
-            $start_date,$end_date,$create_at,$tour_status,
+            $start_date,$end_date,$created_at,$tour_status,
             $image1,$image2,$image3,$image4);
 
             header("location: ?route=admin");
@@ -150,7 +151,7 @@ class adminControllers{
             $content2 = $_POST['content2'];
             $content3 = $_POST['content3'];
             $status = $_POST['status'];
-            $create_at = date('Y-m-d');
+            $created_at = date('Y-m-d');
 
             $role = $_SESSION['role'];
             $user = $this->home->getUserBy('role',$role);
@@ -167,7 +168,7 @@ class adminControllers{
             $image3 = $_FILES["image3"]["name"];
             $result = $this->home->insertNews($title, $main_img, $description, $image1,
             $content, $image2, $content2, $image3,
-            $content3, $author_id, $status, $create_at);
+            $content3, $author_id, $status, $created_at);
 
             header("location: ?route=admin&type=news");
             if(!$result){
@@ -200,7 +201,7 @@ class adminControllers{
             $duration = $_POST['duration'];
             $start_date = $_POST['start_date'];
             $end_date = $_POST['end_date'];
-            $create_at = date('Y-m-d');
+            $created_at = date('Y-m-d');
             $tour_status = $_POST['tour_status'];
             print_r($description);
         
@@ -226,7 +227,7 @@ class adminControllers{
             }
             $result = $this->home->editTour($id,$tour_name,$location,$vehicle,$region,$start_location,
             $description,$price,$duration,$image,
-            $start_date,$end_date,$create_at,$tour_status,
+            $start_date,$end_date,$created_at,$tour_status,
             $image1,$image2,$image3,$image4);
 
             header("location: ?route=admin");
@@ -257,7 +258,7 @@ class adminControllers{
             $content2 = $_POST['content2'];
             $content3 = $_POST['content3'];
             $status = $_POST['status'] ?? '';
-            $create_at = date('Y-m-d');
+            $created_at = date('Y-m-d');
 
             $role = $_SESSION['role'];
             $user = $this->home->getUserBy('role',$role);
@@ -283,7 +284,7 @@ class adminControllers{
 
             $result = $this->home->editNews($news_id,$title, $main_img, $description, $image1,
             $content, $image2, $content2, $image3,
-            $content3, $author_id, $status, $create_at);
+            $content3, $author_id, $status, $created_at);
 
             header("location: ?route=admin&type=news");
             if(!$result){

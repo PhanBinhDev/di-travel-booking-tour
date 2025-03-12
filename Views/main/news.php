@@ -15,14 +15,14 @@ require_once "./Views/layout/header.php";
           <div class="list-inline">
             <ul>
               <li>Tác giả: <span class="author-name">Vtdiem</span></li>
-              <li><?= $value["create_at"]?></li>
+              <li><?= $value["created_at"]?></li>
               <li><i class="fa-solid fa-chart-line"></i> views</li>
             </ul>
           </div>
         </div>
       </section>
       <!--end hottest news -->
-      <? } ?>
+      <?php } ?>
 
       <section class="second-news">
 
@@ -36,7 +36,7 @@ require_once "./Views/layout/header.php";
             </div>
           </div>
         </div>
-        <? } ?>
+        <?php } ?>
 
       </section>
       <!--end second -->
@@ -63,7 +63,7 @@ require_once "./Views/layout/header.php";
             <div class="list-inline">
               <ul>
                 <li>Tác giả: <span class="author-name">Vtdiem</span></li>
-                <li><?= $value["create_at"]?></li>
+                <li><?= $value["created_at"]?></li>
                 <li><i class="fa-solid fa-chart-line"></i> views</li>
               </ul>
             </div>
@@ -72,8 +72,7 @@ require_once "./Views/layout/header.php";
           </div>
         </div>
         <!--end care-news 1 -->
-        <? } ?>
-
+        <?php } ?>
       </section>
       <!--end care-news left -->
 

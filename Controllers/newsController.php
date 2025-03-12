@@ -8,8 +8,8 @@ class newsControllers{
 
     public function news(){
         $sql = "SELECT * from news";
-        $sql1 = "SELECT * from news ORDER BY create_at ASC LIMIT 1";
-        $sql2 = "SELECT * from news ORDER BY create_at DESC LIMIT 2";
+        $sql1 = "SELECT * from news ORDER BY created_at ASC LIMIT 1";
+        $sql2 = "SELECT * from news ORDER BY created_at DESC LIMIT 2";
 
         $arr_news = $this->home->getAll($sql);
         $arr_news1 = $this->home->getAll($sql1);
@@ -39,8 +39,8 @@ class newsControllers{
             $email = $_POST["email"] ?? '';
             $phone = $_POST["phone"] ?? '';
             $message = $_POST["message"] ?? '';
-            $create_at = date('Y-m-d');
-            $result = $this->home->insertContact($name, $email, $phone, $message, $create_at);
+            $created_at = date('Y-m-d');
+            $result = $this->home->insertContact($name, $email, $phone, $message, $created_at);
             if(!$result){
                 $notify = "Gửi liên hệ thất bại";
             }

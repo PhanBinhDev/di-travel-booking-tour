@@ -76,9 +76,9 @@ class homeControllers{
                 $user = $this->home->getUserBy('username', $username);
                 $user_id = $user["id"];
                 $comment = trim($_POST["comment"]);
-                $create_at = date('Y-m-d');
+                $created_at = date('Y-m-d');
     
-                $this->home->insertComment($tour_id, $user_id, $comment, $create_at);
+                $this->home->insertComment($tour_id, $user_id, $comment, $created_at);
             } else {
                 $_SESSION['notification'] = "Hãy nhập nội dung bình luận";
                

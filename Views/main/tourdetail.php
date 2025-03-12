@@ -145,7 +145,7 @@ require_once "./Views/layout/header.php";
           <?php foreach($comments as $comment){ ?>
           <div class="single-comment">
             <div class="comment-author"><?= $comment['username'] ?></div>
-            <div class="comment-date"><?= $comment['create_at'] ?></div>
+            <div class="comment-date"><?= $comment['created_at'] ?></div>
             <div class="comment-text"><?= $comment['comment'] ?></div>
           </div>
           <?php } ?>

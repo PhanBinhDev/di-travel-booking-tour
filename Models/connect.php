@@ -1,10 +1,13 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
+require './Configs/Database.php';
+
+$servername = $config['servername'] ?? 'localhost';
+$username = $config['username'] ?? 'root';
+$password = $config['password'] ?? '';
+$dbname = $config['dbname'] ?? 'ditravel';
 
 try {
-  $conn = new PDO("mysql:host=$servername;dbname=ditravel", $username, $password);
+  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   // echo "Connected successfully";
 } catch(PDOException $e) {

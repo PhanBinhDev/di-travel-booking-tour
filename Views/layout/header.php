@@ -31,7 +31,8 @@
 
       <?php if(isset($_SESSION["username"])){ ?>
       <a href='index.php?route=<?=$_SESSION["role"]?>&id=<?=$_SESSION["user_id"]?>'><i id="signin_icon"
-          class="fa-solid fa-user"></i></a>
+          class="fa-solid fa-user"></i>
+      </a>
       <a href="index.php?route=logout">
         <i class="fa-solid fa-right-from-bracket"></i>
       </a>
