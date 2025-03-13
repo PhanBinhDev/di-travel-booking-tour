@@ -1,5 +1,5 @@
 <?php
-require './Configs/Database.php';
+require './Configs/Config.php';
 
 $servername = $config['servername'] ?? 'localhost';
 $username = $config['username'] ?? 'root';
